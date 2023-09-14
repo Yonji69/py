@@ -1,0 +1,46 @@
+class Complex:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+
+    def __add__(self, other):
+        # Overloading the + operator for complex number addition
+        real_sum = self.real + other.real
+        imag_sum = self.imag + other.imag
+        return Complex(real_sum, imag_sum)
+
+    def __str__(self):
+        # String representation of a complex number
+        return f"{self.real} + {self.imag}i"
+
+
+# Function to read N complex numbers and compute their sum
+def compute_complex_sum(N):
+    if N < 2:
+        print("Please enter at least 2 complex numbers.")
+        return None
+
+    complex_numbers = []
+
+    for i in range(N):
+        real = float(input(f"Enter the real part of complex number {i+1}: "))
+        imag = float(input(f"Enter the imaginary part of complex number {i+1}: "))
+        complex_numbers.append(Complex(real, imag))
+
+    # Initialize the sum with the first complex number
+    total = complex_numbers[0]
+
+    # Add the remaining complex numbers to the sum
+    for i in range(1, N):
+        total += complex_numbers[i]
+
+    return total
+
+
+# Input the number of complex numbers to add
+N = int(input("Enter the number of complex numbers (N >= 2): "))
+
+result = compute_complex_sum(N)
+
+if result is not None:
+    print(f"The sum of the complex numbers is: {result}")

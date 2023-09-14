@@ -1,0 +1,29 @@
+# Input two integers from the user
+num1 = int(input("Enter the first integer: "))
+num2 = int(input("Enter the second integer: "))
+
+# Addition
+addition_result = num1 + num2
+print(f"Addition: {num1} + {num2} = {addition_result}")
+
+# Subtraction
+subtraction_result = num1 - num2
+print(f"Subtraction: {num1} - {num2} = {subtraction_result}")
+
+# Multiplication
+multiplication_result = num1 * num2
+print(f"Multiplication: {num1} * {num2} = {multiplication_result}")
+
+# Division
+if num2 != 0:
+    division_result = num1 / num2
+    print(f"Division: {num1} / {num2} = {division_result}")
+else:
+    print("Division by zero is not allowed!")
+
+# Modulo Division
+if num2 != 0:
+    modulo_result = num1 % num2
+    print(f"Modulo Division: {num1} % {num2} = {modulo_result}")
+else:
+    print("Modulo division by zero is not allowed!")
