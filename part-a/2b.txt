@@ -1,0 +1,34 @@
+def bin2Dec(val):
+    rev = val[::-1]
+    dec = 0
+    i = 0
+    for dig in rev:
+        dec += int(dig) * 2**i
+        i += 1
+    return dec
+
+def oct2Hex(val):
+    rev = val[::-1]
+    dec = 0
+    i = 0
+    for dig in rev:
+        dec += int(dig) * 8**i
+        i += 1
+    
+    result = []
+    while dec != 0:
+        remainder = dec % 16
+        if remainder <= 9:
+            result.append(str(remainder))
+        else:
+            result.append(chr(ord('A') + (remainder - 10)))
+        dec = dec // 16
+    
+    hex_val = "".join(result[::-1])
+    return hex_val
+
+num1 = input("Enter a binary number: ")
+print("Decimal equivalent:", bin2Dec(num1))
+
+num2 = input("Enter an octal number: ")
+print("Hexadecimal equivalent:", oct2Hex(num2))
